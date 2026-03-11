@@ -5,10 +5,6 @@
   font-family: "Delicious Handrawn", Arial, sans-serif;
 }
 
-body {
-  background: lightblue;
-}
-
 .box-nav,
 .box-end {
   position: fixed;
@@ -19,7 +15,9 @@ body {
 
 .box-nav {
   top: 0;
-  background: lightblue;
+  background: rgb(173, 216, 230);
+  color: white;
+  padding-bottom: 5px;
 }
 
 .box-end {
@@ -35,6 +33,13 @@ body {
   font-size: 40px;
   text-transform: capitalize;
 }
+/* .nav li a p {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+} */
 .nav li {
   flex: 1;
   display: flex;

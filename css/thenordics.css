@@ -98,25 +98,25 @@ body::before {
 
 /* Specific Card Heights & Border Colors */
 .icecon {
-  height: 350px;
+  height: 400px;
   /* position: absolute; */
   transition: all 0.3s ease-in-out;
 }
 
 .fincon {
-  height: 350px;
+  height: 400px;
   /* position: absolute; */
   transition: all 0.3s ease-in-out;
 }
 
 .swecon {
-  height: 270px;
+  height: 450px;
   /* position: absolute; */
   transition: all 0.3s ease-in-out;
 }
 
 .norcon {
-  height: 280px;
+  height: 450px;
   /* position: absolute; */
   transition: all 0.3s ease-in-out;
 }
@@ -153,11 +153,11 @@ body:has(.norcon:hover)::before {
 body:has(.icecon:hover) {
   cursor: pointer;
   .icecon p {
-    color: #a0c4ff;
+    color: #e1e8f3;
     font-size: 60px;
   }
   .text-h1 h1 {
-    color: #a0c4ff;
+    color: #e1e8f3;
     font-size: 90px;
   }
 }
@@ -177,11 +177,11 @@ body:has(.fincon:hover) {
 body:has(.swecon:hover) {
   cursor: pointer;
   .swecon p {
-    color: #c2a9cd;
+    color: blue;
     font-size: 60px;
   }
   .text-h1 h1 {
-    color: #c2a9cd;
+    color: blue;
     font-size: 90px;
   }
 }
@@ -196,4 +196,13 @@ body:has(.norcon:hover) {
     color: #93dbc4;
     font-size: 90px;
   }
+}
+h1,
+p {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: white;
 }
