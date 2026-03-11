@@ -136,7 +136,6 @@
   object-fit: contain;
 }
 .information h1 {
-  color: rgb(255, 255, 255);
   font-size: 80px;
 }
 /* Text Containers: Distributing 30px text inside 320px padding */
@@ -146,7 +145,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px; /* Space between h3 and p */
+  /* Space between h3 and p */
   text-align: center;
   color: rgb(255, 255, 255);
 }
@@ -225,7 +224,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 15px; /* Spacing between h3 and p */
+  /* Spacing between h3 and p */
   text-align: center;
 }
 
@@ -311,7 +310,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center; /* Vertically centers the text block */
-  gap: 20px;
+
   text-align: center;
 }
 
@@ -400,13 +399,38 @@
   justify-content: center; /* Vertically centers text */
   gap: 10px;
   text-align: center;
-  color: white;
 }
+h1,
+.information h3,
+.information p,
+.basicinfortext h3,
+.basicinfortext1 h3,
+.basicinfortext p,
+.basicinfortext1 p,
+.loccationintrotext0 h3,
+.loccationintrotext0-1 h3,
+.loccationintrotext0 p,
+.loccationintrotext0-1 p,
 .loccationintrotext1 h3,
 .loccationintrotext1-1 h3,
 .loccationintrotext1 p,
-.loccationintrotext1-1 p {
-  background: rgba(128, 128, 128, 0.435);
+.loccationintrotext1-1 p,
+.loccationintrotext2 h3,
+.loccationintrotext2-1 h3,
+.loccationintrotext2 p,
+.loccationintrotext2-1 p,
+.loccationintrotext3 h3,
+.loccationintrotext3-1 h3,
+.loccationintrotext3 p,
+.loccationintrotext3-1 p {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: rgb(0, 0, 0);
+  gap: 10px;
+  color: black;
 }
 .loccationintrotext1 {
   grid-area: 2 / 2 / 3 / 4;

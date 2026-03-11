@@ -565,3 +565,32 @@
   font-size: 60px;
 }
 /* end of locationintroduction3-1 */
+h1,
+.information h3,
+.information p,
+.basicinfortext h3,
+.basicinfortext1 h3,
+.basicinfortext p,
+.basicinfortext1 p,
+.loccationintrotext0 h3,
+.loccationintrotext0-1 h3,
+.loccationintrotext0 p,
+.loccationintrotext0-1 p,
+.loccationintrotext1 h3,
+.loccationintrotext1-1 h3,
+.loccationintrotext1 p,
+.loccationintrotext1-1 p,
+.loccationintrotext2 h3,
+.loccationintrotext2-1 h3,
+.loccationintrotext2 p,
+.loccationintrotext2-1 p,
+.loccationintrotext3 h3,
+.loccationintrotext3-1 h3,
+.loccationintrotext3 p,
+.loccationintrotext3-1 p {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
