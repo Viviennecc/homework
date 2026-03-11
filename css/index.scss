@@ -1,0 +1,118 @@
+// 1. Variables
+$primary-font: "Delicious Handrawn", Arial, sans-serif;
+$bg-color: lightblue;
+$footer-bg: black;
+$nav-height: 41px;
+$footer-font-size: 28px;
+
+// 2. Mixins (Reusable chunks of code)
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 3. Global Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $primary-font;
+}
+
+body {
+  background: $bg-color;
+}
+
+// 4. Layout Containers
+.box-nav,
+.box-end {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.box-nav {
+  top: 0;
+  background: $bg-color;
+}
+
+.box-end {
+  bottom: 0;
+}
+
+// 5. Navigation Styling
+.nav {
+  height: $nav-height;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  width: 100%;
+  font-size: 40px;
+  text-transform: capitalize;
+
+  li {
+    flex: 1;
+    @include flex-center;
+
+    a {
+      width: 100%;
+      height: 100%;
+      @include flex-center;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    // 6. Hover Logic (Condensed with Nesting)
+    &:hover a {
+      color: transparent !important;
+      font-size: 0 !important;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    // Map images to classes using the & parent selector
+    &.icon:hover a {
+      background-image: url("./TheNordics.jpeg");
+    }
+    &.iceland:hover a {
+      background-image: url("./iceland.png");
+    }
+    &.finland:hover a {
+      background-image: url("./finland.png");
+    }
+    &.sweden:hover a {
+      background-image: url("./sweden.png");
+    }
+    &.norway:hover a {
+      background-image: url("./norway.png");
+    }
+  }
+}
+
+// 7. Main Content Area
+.con {
+  position: fixed;
+  top: $nav-height;
+  width: 100%;
+  height: calc(100vh - 89px);
+  overflow: hidden;
+
+  iframe[name="incontent"],
+  .content {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+// 8. Footer
+.end {
+  background: $footer-bg;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: $footer-font-size;
+}

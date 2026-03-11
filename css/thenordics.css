@@ -1,0 +1,199 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Delicious Handrawn", Arial, sans-serif;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 100%;
+  background-color: #000; /* Base color behind the semi-transparent image */
+  background: url(./nordicswalp.avif);
+  text-decoration: none;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Initial Background */
+  background: url("./nordicswalp.avif") no-repeat center/cover;
+
+  /* Control semi-transparency here */
+  opacity: 1;
+
+  z-index: -1;
+  /* This creates the smooth 2s cross-fade */
+  transition:
+    background-image 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+}
+
+.main {
+  width: 100%;
+  max-width: 2100px;
+  height: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* CHANGE: Use space-between to push h1 up and grid down, 
+     or keep flex-start and let the grid center itself */
+  justify-content: flex-start;
+
+  padding: 40px 0;
+  padding-bottom: 150px;
+}
+.text-h1 {
+  width: 100%;
+  text-align: center;
+  /* Keeps it at the top */
+  margin-bottom: auto;
+  h1 {
+    font-size: 60px;
+  }
+}
+.midconcard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 50px;
+  width: 100%;
+  max-width: 2000px;
+  /* Remove height: 500px to allow flex centering to work better */
+  height: auto;
+
+  /* THIS CENTERS THE GRID IN THE MIDDLE OF .MAIN */
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Shared Card Styles */
+.inmidcon {
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+
+  overflow: hidden;
+  justify-content: center;
+}
+
+/* Simplified Image Handling */
+.inmidcon img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+/* Specific Card Heights & Border Colors */
+.icecon {
+  height: 350px;
+  /* position: absolute; */
+  transition: all 0.3s ease-in-out;
+}
+
+.fincon {
+  height: 350px;
+  /* position: absolute; */
+  transition: all 0.3s ease-in-out;
+}
+
+.swecon {
+  height: 270px;
+  /* position: absolute; */
+  transition: all 0.3s ease-in-out;
+}
+
+.norcon {
+  height: 280px;
+  /* position: absolute; */
+  transition: all 0.3s ease-in-out;
+}
+.norcon img {
+  border-color: lightblue;
+}
+
+.text {
+  font-size: 50px;
+  text-align: center;
+}
+.text-h1 h1,
+.inmidcon p {
+  transition:
+    color 0.3s ease-in-out,
+    font-size 0.3s ease-in-out;
+}
+
+/* 3. Update the hover states to transition the background layer */
+body:has(.icecon:hover)::before {
+  background-image: url(./icelandwalp.avif);
+}
+body:has(.fincon:hover)::before {
+  background-image: url(./finlandwalp.avif);
+}
+body:has(.swecon:hover)::before {
+  background-image: url(./swedenwalp.avif);
+}
+body:has(.norcon:hover)::before {
+  background-image: url(./norwaywalp.avif);
+}
+
+/* Existing Body:has logic remains the same, just removing background: url */
+body:has(.icecon:hover) {
+  cursor: pointer;
+  .icecon p {
+    color: #a0c4ff;
+    font-size: 60px;
+  }
+  .text-h1 h1 {
+    color: #a0c4ff;
+    font-size: 90px;
+  }
+}
+
+body:has(.fincon:hover) {
+  cursor: pointer;
+  .fincon p {
+    color: #fff;
+    font-size: 60px;
+  }
+  .text-h1 h1 {
+    color: #fff;
+    font-size: 90px;
+  }
+}
+
+body:has(.swecon:hover) {
+  cursor: pointer;
+  .swecon p {
+    color: #c2a9cd;
+    font-size: 60px;
+  }
+  .text-h1 h1 {
+    color: #c2a9cd;
+    font-size: 90px;
+  }
+}
+
+body:has(.norcon:hover) {
+  cursor: pointer;
+  .norcon p {
+    color: #93dbc4;
+    font-size: 60px;
+  }
+  .text-h1 h1 {
+    color: #93dbc4;
+    font-size: 90px;
+  }
+}

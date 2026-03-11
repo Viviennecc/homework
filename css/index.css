@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Delicious Handrawn", Arial, sans-serif;
+}
+
+body {
+  background: lightblue;
+}
+
+.box-nav,
+.box-end {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.box-nav {
+  top: 0;
+  background: lightblue;
+}
+
+.box-end {
+  bottom: 0;
+}
+
+.nav {
+  height: 53px;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  width: 100%;
+  font-size: 40px;
+  text-transform: capitalize;
+}
+.nav li {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+.nav li:hover a {
+  color: transparent !important;
+  font-size: 0 !important;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.nav li.icon:hover a {
+  background-image: url("./TheNordics.jpeg");
+}
+.nav li.iceland:hover a {
+  background-image: url("./iceland.png");
+}
+.nav li.finland:hover a {
+  background-image: url("./finland.png");
+}
+.nav li.sweden:hover a {
+  background-image: url("./sweden.png");
+}
+.nav li.norway:hover a {
+  background-image: url("./norway.png");
+}
+
+.con {
+  position: fixed;
+  top: 41px;
+  width: 100%;
+  height: calc(100vh - 89px);
+  overflow: hidden;
+}
+.con iframe[name="incontent"],
+.con .content {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.end {
+  /* background: black; */
+  color: black;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 28px;
+} /*# sourceMappingURL=index.css.map */
+/* 1. Hide the original "Welcome" text when ANY nav item is hovered */
+body:has(.nav li:hover) .end p {
+  font-size: 0;
+}
+body:has(.icon:hover) .end p::after {
+  content: "Welcome to the Nordics";
+  font-size: 28px;
+  visibility: visible;
+}
+/* 2. Inject "Iceland" when .iceland is hovered */
+body:has(.iceland:hover) .end p::after {
+  content: "Iceland";
+  font-size: 28px;
+  visibility: visible;
+}
+
+/* 3. Do the same for other countries */
+body:has(.finland:hover) .end p::after {
+  content: "Finland";
+  font-size: 28px;
+}
+
+body:has(.sweden:hover) .end p::after {
+  content: "Sweden";
+  font-size: 28px;
+}
+
+body:has(.norway:hover) .end p::after {
+  content: "Norway";
+  font-size: 28px;
+}

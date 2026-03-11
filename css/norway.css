@@ -1,0 +1,601 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Delicious Handrawn", Arial, Helvetica, sans-serif;
+
+  background-size: cover;
+  width: auto;
+  /* background-position: center; */
+  text-transform: capitalize;
+}
+.information,
+.basicinformatiom,
+.locationintroduction0,
+.locationintroduction1-1,
+.locationintroduction2,
+.locationintroduction3 {
+  position: relative; /* Required for pseudo-element positioning */
+  z-index: 1; /* Keeps content above the background */
+  background: none; /* Remove the old background property */
+}
+.information::before,
+.basicinformatiom::before,
+.locationintroduction0::before,
+.locationintroduction1-1::before,
+.locationintroduction2::before,
+.locationintroduction3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0; /* ADJUST THIS FOR TRANSPARENCY (0.1 to 0.9) */
+  z-index: -1; /* Pushes it behind text */
+  background-size: cover;
+  background-position: center;
+}
+/* 3. Assign the specific images to each section's pseudo-element */
+.information::before {
+  background-image: url("./norway/norway1.avif");
+  background-attachment: fixed; /* Parallax effect */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+}
+.basicinformatiom::before {
+  background-image: url("../css/norway/norway2.avif");
+  background-attachment: fixed;
+  opacity: 0.4;
+}
+.locationintroduction0::before {
+  background-image: url("./norway/Oslo-The-Vibrant-Capital.avif");
+  background-attachment: fixed;
+  opacity: 0.5;
+}
+.locationintroduction1-1::before {
+  background-image: url("./norway/Bergen-The-Gateway-to-the-Fjords.avif");
+  background-attachment: fixed;
+  opacity: 0.4;
+}
+.locationintroduction2::before {
+  background-image: url("../css/norway/Trondheim.avif");
+  background-attachment: fixed;
+  opacity: 0.5;
+}
+.locationintroduction3::before {
+  background-image: url("./norway/Tromsø.webp");
+  background-attachment: fixed;
+  opacity: 0.4;
+}
+.container {
+  display: grid;
+  min-height: 100hv;
+  /* border: 1px solid red; */
+  /* grid-template-columns: 3fr; */
+}
+/* start of information */
+/* Global Reset for your text size */
+.information h3,
+.information p {
+  font-size: 30px;
+  margin: 0; /* Prevents default spacing from breaking your padding layout */
+}
+
+/* start of information */
+.information {
+  display: grid;
+  min-height: 100vh; /* Fixed typo: vh */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto;
+  position: relative;
+}
+
+/* Semi-transparent Background Image */
+.information::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./norway/norway1.avif") no-repeat center / cover;
+  opacity: 0.5; /* Makes background semi-transparent */
+  z-index: -1;
+}
+
+.information > div:first-child {
+  grid-area: 1 / 1 / 2 / 4;
+  padding: 30px;
+  text-align: center;
+}
+
+/* Image Containers: Use Flex to center the <img> tag inside 140px padding */
+.inforimg,
+.inforimg1 {
+  padding: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inforimg {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.inforimg1 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+/* Critical: This makes the <img> tag fit inside your padding */
+.inforimg img,
+.inforimg1 img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.information h1 {
+  color: rgb(255, 255, 255);
+  font-size: 80px;
+}
+/* Text Containers: Distributing 30px text inside 320px padding */
+.infortext,
+.infortext1 {
+  padding: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px; /* Space between h3 and p */
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+/* .infortext h3,
+.infortext1 h3,
+.infortext p,
+.infortext1 p {
+  background: rgb(128, 128, 128);
+} */
+.infortext {
+  grid-area: 2 / 2 / 3 / 4;
+}
+.infortext1 {
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+/* end of information */
+/* start of basicinformation */
+.basicinformatiom {
+  display: grid;
+  min-height: 100vh; /* Fixed hv to vh */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Semi-transparent Background for this specific section */
+.basicinformatiom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../css/norway/norway2.avif") no-repeat center/cover;
+  opacity: 0.4; /* Set transparency (0.0 to 1.0) */
+  z-index: -1;
+}
+
+/* Header Row */
+.basicinformatiom > div:first-child {
+  grid-area: 1 / 1 / 2 / 4;
+  padding: 50px;
+  text-align: center;
+}
+
+/* Image Containers: Centering the <img> tags */
+.basicinforimg,
+.basicinforimg1 {
+  padding: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.basicinforimg {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.basicinforimg1 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+/* Fixing the <img> tags to fit the 140px padding area */
+.basicinforimg img,
+.basicinforimg1 img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Text Containers: Distributing 18px text inside 320px padding */
+.basicinfortext,
+.basicinfortext1 {
+  padding: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px; /* Spacing between h3 and p */
+  text-align: center;
+}
+
+.basicinfortext {
+  grid-area: 2 / 2 / 3 / 4;
+}
+.basicinfortext1 {
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+/* Apply the 18px font size to all text in this section */
+.basicinformatiom h3,
+.basicinformatiom p {
+  font-size: 30px;
+  margin: 0;
+  line-height: 1.6; /* Improves readability for 18px text */
+}
+
+/* Optional: Make the Heading larger than 18px so it stands out */
+.basicinformatiom h1.h1 {
+  font-size: 48px;
+}
+/* end of basicinformatiom */
+/* start of locationintroduction0 */
+.locationintroduction0 {
+  display: grid;
+  min-height: 100vh; /* Fixed typo: vh */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Semi-transparent Background for this section */
+.locationintroduction0::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("./norway/The\ Oslo\ Opera\ House\ \(Operahuset\).jpg")
+    no-repeat center/cover;
+  opacity: 0.5; /* Transparency level */
+  z-index: -1;
+}
+
+/* Header Row */
+.locationintroduction0 > div:first-child {
+  grid-area: 1 / 1 / 2 / 4;
+  padding: 50px;
+  text-align: center;
+}
+
+/* Image Containers: Centering the <img> tags within 140px padding */
+.loccationintroimg0,
+.loccationintroimg0-1 {
+  padding: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loccationintroimg0 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.loccationintroimg0-1 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+/* Scale images to fit the container */
+.loccationintroimg0 img,
+.loccationintroimg0-1 img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Text Containers: Managing 30px text inside 320px padding */
+.loccationintrotext0,
+.loccationintrotext0-1 {
+  padding: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically centers the text block */
+  gap: 20px;
+  text-align: center;
+}
+
+.loccationintrotext0 {
+  grid-area: 2 / 2 / 3 / 4;
+}
+.loccationintrotext0-1 {
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+/* Setting all text in this section to 30px */
+.locationintroduction0 h3,
+.locationintroduction0 p {
+  font-size: 30px;
+  margin: 0;
+  line-height: 1.4; /* Slightly tighter line height for large text */
+}
+
+/* Optional: Make the main section title larger than 30px */
+.locationintroduction0 h1.h1 {
+  font-size: 60px;
+}
+
+/* end of locationintroduction */
+/* start of locationintroduction1-1 */
+.locationintroduction1-1 {
+  display: grid;
+  min-height: 100vh; /* Fixed typo: vh */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Semi-transparent Background Image */
+.locationintroduction1-1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("./norway/Bergen-The-Gateway-to-the-Fjords.avif") no-repeat
+    center/cover;
+  opacity: 0.5; /* Adjust transparency here */
+  z-index: -1;
+}
+
+/* Header Row */
+.locationintroduction1-1 > div:first-child {
+  grid-area: 1 / 1 / 2 / 4;
+  padding: 50px;
+  text-align: center;
+}
+
+/* Image Containers: Centering the <img> tags within 140px padding */
+.loccationintroimg1,
+.loccationintroimg1-1 {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loccationintroimg1 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.loccationintroimg1-1 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+/* Scale images to fit the 140px padding area */
+.loccationintroimg1 img,
+.loccationintroimg1-1 img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Text Containers: Managing 30px text inside 320px padding */
+.loccationintrotext1,
+.loccationintrotext1-1 {
+  padding: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically centers text */
+  gap: 10px;
+  text-align: center;
+  color: white;
+}
+.loccationintrotext1 h3,
+.loccationintrotext1-1 h3,
+.loccationintrotext1 p,
+.loccationintrotext1-1 p {
+  background: rgba(128, 128, 128, 0.435);
+}
+.loccationintrotext1 {
+  grid-area: 2 / 2 / 3 / 4;
+}
+.loccationintrotext1-1 {
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+/* Global Text Settings for this section */
+.locationintroduction1-1 h3,
+.locationintroduction1-1 p {
+  font-size: 30px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Optional: Make the main heading stand out */
+.locationintroduction1-1 h1.h1 {
+  font-size: 60px;
+}
+/* end of locationintroduction1-1 */
+/* start of locationintroduction2-1 */
+.locationintroduction2 {
+  display: grid;
+  min-height: 100vh; /* Corrected from hv to vh */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Semi-transparent Background for East Iceland */
+.locationintroduction2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../css/norway/Trondheim.avif") no-repeat center/cover;
+  opacity: 0.45; /* Adjust transparency here */
+  z-index: -1;
+}
+
+/* Section Header */
+.locationintroduction2 > div:first-child {
+  grid-area: 1 / 1 / 2 / 4;
+  padding: 50px;
+  text-align: center;
+}
+
+/* Image Containers: Centering img tags within 140px padding */
+.loccationintroimg2,
+.loccationintroimg2-1 {
+  padding: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loccationintroimg2 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.loccationintroimg2-1 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+/* Fixing <img> tag sizing inside the padding */
+.loccationintroimg2 img,
+.loccationintroimg2-1 img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Text Containers: Fitting 30px text inside 320px padding */
+.loccationintrotext2,
+.loccationintrotext2-1 {
+  padding: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px; /* Even distribution between h3 and p */
+  text-align: center;
+  color: white;
+}
+
+.loccationintrotext2 {
+  grid-area: 2 / 2 / 3 / 4;
+}
+.loccationintrotext2-1 {
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+/* Set text size to 30px and clean up margins */
+.locationintroduction2 h3,
+.locationintroduction2 p {
+  font-size: 30px;
+  margin: 0;
+  line-height: 1.5; /* Balanced spacing for readability */
+}
+
+/* Optional: Main Title Size */
+.locationintroduction2 h1.h1 {
+  font-size: 55px;
+}
+/* end of locationintroduction2-1 */
+/* start of locationintroduction3-1 */
+.locationintroduction3 {
+  display: grid;
+  min-height: 100vh; /* Fixed typo: vh */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Semi-transparent Background for North Iceland */
+.locationintroduction3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("./norway/Tromsø.webp") no-repeat center/cover;
+  opacity: 0.4; /* Transparency level for the background image */
+  z-index: -1;
+}
+
+/* Section Header */
+.locationintroduction3 > div:first-child {
+  grid-area: 1 / 1 / 2 / 4;
+  padding: 50px;
+  text-align: center;
+}
+
+/* Image Containers: Centering the <img> tags within 140px padding */
+.loccationintroimg3,
+.loccationintroimg3-1 {
+  padding: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loccationintroimg3 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.loccationintroimg3-1 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+/* Scale <img> tags to fit the 140px padding space */
+.loccationintroimg3 img,
+.loccationintroimg3-1 img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Text Containers: Evenly distributing 30px text inside 320px padding */
+.loccationintrotext3,
+.loccationintrotext3-1 {
+  padding: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers text block vertically */
+  gap: 25px; /* Space between h3 and p */
+  text-align: center;
+}
+
+.loccationintrotext3 {
+  grid-area: 2 / 2 / 3 / 4;
+}
+.loccationintrotext3-1 {
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+/* Font size settings for the whole section */
+.locationintroduction3 h3,
+.locationintroduction3 p {
+  font-size: 30px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Make the main title larger */
+.locationintroduction3 h1.h1 {
+  font-size: 60px;
+}
+/* end of locationintroduction3-1 */
